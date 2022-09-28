@@ -39,7 +39,6 @@ h2 {
   width: 100%;
   position: relative;
   overflow-x: scroll;
-  margin-bottom: 2em;
   cursor: -webkit-grab;
   cursor: grab;
 }
@@ -64,6 +63,7 @@ h2 {
   border: 2px solid black;
   display: grid;
   grid-template-rows: 1fr 1fr;
+  grid-template-columns: 4vw 1fr 4vw;
   user-drag: none;
   -webkit-user-drag: none;
   user-select: none;
@@ -74,46 +74,51 @@ h2 {
 .slider__inner__slide::after {
   content: "";
   background-image: url(../assets/textures/stroke3.png);
-  background-size: cover;
-  width: 70%;
-  height: 60%;
-  opacity: 0.8;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 80%;
+  height: 80%;
+  opacity: 0.7;
   grid-row: 1/3;
-  grid-column: 1/2;
+  grid-column: 1/-1;
   align-self: center;
   justify-self: center;
 }
 .slider__inner__slide h2 {
   grid-row: 2/3;
-  grid-column: 1/2;
+  grid-column: 2/3;
   z-index: 2;
   justify-self: center;
   align-self: flex-end;
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 3.5vw;
   margin-bottom: 1ex;
   text-align: center;
 }
 .slider__inner__slide h3 {
   grid-row: 1/2;
-  grid-column: 1/2;
+  grid-column: 2/3;
   z-index: 2;
   justify-self: center;
   text-transform: uppercase;
-  font-size: 2.5rem;
+  font-size: 2.5vw;
   margin-top: 1ex;
   text-align: center;
 }
 .slider__inner__slide img {
   grid-row: 1/3;
-  grid-column: 1/2;
-  width: 100%;
-  height: 100%;
+  grid-column: 2/3;
+  width: 90%;
+  height: 90%;
   -o-object-fit: cover;
      object-fit: cover;
   pointer-events: none;
   z-index: 1;
   position: relative;
+  align-self: center;
+  justify-self: center;
+  transform: scale(0.9);
 }
 .slider__inner__slide:not(:last-child) {
   border-right: none;
@@ -121,4 +126,7 @@ h2 {
 .slider__inner__slide.active {
   background-image: url(../assets/textures/asfalt-dark.png);
   background-color: gold;
+}
+.slider__inner__slide.active img {
+  transform: scale(1);
 }/*# sourceMappingURL=main.css.map */
