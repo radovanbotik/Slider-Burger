@@ -35,17 +35,19 @@ sliderInner.addEventListener("wheel", e => {
   slider.scrollLeft = slider.scrollLeft + e.deltaY / 2;
 });
 
-const options = {};
-const callback = entries => {
-  entries.forEach(entry => {
-    if (entry.boundingClientRect.right <= slider.getBoundingClientRect().x) {
-      entry.target.removeAttribute(["data-id"]);
-      entry.target.nextElementSibling.setAttribute(["data-id"], "active");
-    }
-  });
-};
+//to display data later
 
-const observer = new IntersectionObserver(callback, options);
-slides.forEach(slide => {
-  observer.observe(slide);
-});
+// const options = {};
+// const callback = entries => {
+//   entries.forEach(entry => {
+//     if (entry.boundingClientRect.right <= slider.getBoundingClientRect().x) {
+//       entry.target.removeAttribute(["data-id"]);
+//       entry.target.nextElementSibling.setAttribute(["data-id"], "active");
+//     }
+//   });
+// };
+
+// const observer = new IntersectionObserver(callback, options);
+// slides.forEach(slide => {
+//   observer.observe(slide);
+// });
